@@ -115,3 +115,4 @@ while True:
                     pendulumf()
                 elif aspect == "projectile":
                     projectilef()
+                    pendulumf()
