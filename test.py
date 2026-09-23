@@ -1,0 +1,84 @@
+import math
+g = 9.81
+def projectilef():
+    while True:
+        eqn = input("Are you working with position equations(p), velocity equations(v), maximum height(mh), time of flight(t), range(r), maximum range(mr) or equation of tranjectory(e)")
+        if eqn == "q":
+            quit()
+        elif eqn == "p":
+            p = input("Is it the horizontal(h) or vertical(v) equation you are finding?: ")
+            if p == "h":
+                c = input("Do you want to find the initial velocity(v), the angle(a) or the time(t)?: ")
+                if c == "v":
+                    x = float(input("What is the horizontal equation?: "))
+                    θ = float(input("What is the angle?: "))
+                    t = float(input("What s the time taken?: "))
+                    θ = math.radians(θ)
+                    d = math.cos(θ) * t
+                    v = x / d
+                    print(f"The initial velocity is {v:.2f}")
+                elif c == "a":
+                    x = float(input("What is the horizontal equation?: "))
+                    t = float(input("What s the time taken?: "))
+                    v = float(input("What is the initial velocity?: "))
+                    d = v * t
+                    f = x / d
+                    θ = math.acos(f)
+                    print(f"The angle is {θ:.2f}")
+                elif c == "t":
+                    x = float(input("What is the horizontal equation?: "))
+                    v = float(input("What is the initial velocity?: "))
+                    θ = float(input("What is the angle?: "))
+                    θ = math.radians(θ)
+                    d = v * math.cos(θ)
+                    t = x / d
+                    print(f"The time taken is {t:.2f}")
+        
+            elif eqn == "v" :
+                c = input("Do you want to find the intial velocity(v), the angle(a) or the time(t)")
+                if c == "v":
+                    y = float(input("What is the vertical position?: "))
+                    t = float(input("What is the time taken?: "))
+                    θ = float(input("What is the angle?: "))
+                    θ = math.radians(θ)
+                    n = 2 * y + g * t ** 2
+                    d = 2 * math.sin(θ) * t
+                    v = n / d
+                    print(f"The initial velocity is {v:.2f}")
+                elif c == "a":
+                    y = float(input("What is the vertical position?: "))
+                    v = float(input("What is thhe initial velocity?: "))
+                    t = float(input("What is the time taken?: "))
+                    n = 2 * y + g * t ** 2
+                    d = 2 * v * t
+                    i = n / d
+                    i = math.radians(i)
+                    θ = math.asin(i)
+                elif c == "t":
+                    y = float(input("What is the vertical position?: "))
+                    v = float(input("What is thhe initial velocity?: "))
+                    θ = float(input("What is the angle?: "))
+                    θ = math.radians(θ)
+                    n1 = v * math.sin(θ) + math.sqrt(v ** 2 * math.sin(θ) ** 2 - 2 * (g * y))
+                    n2 = v * math.sin(θ) - math.sqrt(v ** 2 * math.sin(θ) ** 2 - 2 * (g * y))
+                    t1 = n1 / g
+                    t2 = n2 / g
+                    print(f"The two possible times for t are {t1:.2f}s or {t2:.2f}s")
+        
+        elif eqn == "v":
+            C = input("Do you want to find the Horizontal velocity(h) or the Vertical velocity(v)?: ")            
+            if c == "h":
+                p = input("Do you want to find the initial velocity(v) or the angle(a)?: ")
+                if p == "v":
+                    vx = float(input("What is the Horizontal velocity?: "))
+                    θ = float(input("What is the angle?: "))
+                    θ = math.radians(θ)
+                    vo = vx / math.cos(θ)
+                    print(f"The initial velocity is {vo:.2f}")
+                elif p == "a":
+                    vx = float(input("What is the Horizontal velocity?: "))
+                    vo = float(input("What is the initial velocity?: "))
+                    a = vx / vo
+                    a = math.radians(a)
+                    θ = math.acos(a)
+projectilef()
