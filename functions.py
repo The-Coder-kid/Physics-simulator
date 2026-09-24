@@ -130,10 +130,12 @@ def projectilef():
                     θ = math.sin(th)
         elif eqn == "mh":
             p = input("Do you want to find the initial velocity(v) or the angle(a)")
-            h = float(input("What is the maximum height?: "))
-            vo = float(input("What is the initial velocity?: "))
-            θ = float(input("What is the angle?: "))
-            θ = math.radians(θ)
-            n = 2 * g * h
-            θ = math.sin(θ) ** 2
-            
+            if p == "v":
+                h = float(input("What is the maximum height?: "))
+                vo = float(input("What is the initial velocity?: "))
+                θ = float(input("What is the angle?: "))
+                θ = math.radians(θ)
+                n = 2 * g * h
+                θ = math.sin(θ) ** 2
+                v = math.sqrt(n / θ)
+                
