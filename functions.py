@@ -113,3 +113,14 @@ def projectilef():
                     d = math.sin(θ)
                     vo = n / d
                     print(f"The initial velocity is {vo:.2f}")
+                elif p == "t":
+                    vy = float(input("What is the vertical velocity?: "))
+                    vo = float(input("What is the initial velocity?: "))
+                    θ = float(input("What is the angle?: "))
+                    θ = math.radians(θ)
+                    θ = math.sin(θ)
+                    n = vo * θ - vy
+                    t = n / g
+                elif p == "a":
+                    vy = float(input("What is the vertical velocity?: "))
+                    vo = float(input("What is the initial velocity?: "))
