@@ -124,3 +124,7 @@ def projectilef():
                 elif p == "a":
                     vy = float(input("What is the vertical velocity?: "))
                     vo = float(input("What is the initial velocity?: "))
+                    t = float("What is the time take?: ")
+                    n = vy * g * t
+                    th = math.radians(n / vo)
+                    θ = math.sin(th)
