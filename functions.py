@@ -138,4 +138,10 @@ def projectilef():
                 n = 2 * g * h
                 θ = math.sin(θ) ** 2
                 v = math.sqrt(n / θ)
+            elif p == "a":
+                n = 2 * g * h
+                v = v ** 2
+                f = math.sqrt(n / v)
+                f = math.radians(f)
+                θ = math.asin(f)
                 
