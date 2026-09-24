@@ -92,4 +92,13 @@ def projectilef():
                 p = input("Do you want to find the initial velocity(v) or the angle(a)?: ")
                 if p == "v":
                     vx = float(input("What is the Horizontal velocity?: "))
-                    θ = float(input())
+                    θ = float(input("What is the angle?: "))
+                    θ = math.radians(θ)
+                    vo = vx / math.cos(θ)
+                    print(f"The initial velocity is {vo:.2f}")
+                elif p == "a":
+                    vx = float(input("What is the Horizontal velocity?: "))
+                    vo = float(input("What is the initial velocity?: "))
+                    a = vx / vo
+                    a = math.radians(a)
+                    θ = math.acos(a)
