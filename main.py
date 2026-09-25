@@ -3,11 +3,24 @@ from find import pendulumf, projectilef
 from functions import *
 escape = ["quit", "q"]
 Practicals = ["pendulum", "projectile", "circuit", "m", "find"]
+Total_practicals = len(Practicals)
 pi = 3.142
 g = 9.81    
 
 while True:
+    print("Welcome to the Physics practicals simulator")
+    print("The following are the practicals available in this program:", end=" ")
+
+    for index, practical in enumerate(Practicals):
+        if index == Total_practicals - 1:
+            print(practical, end=".")
+        else:
+            print(practical, end=", ")
+
+    print("\nType 'quit' or 'q' to exit the program")
     Choice = input("What practical do you want to do?: ").lower()
+   
+   
 
     if Choice in escape:
         quit()
