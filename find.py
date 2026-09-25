@@ -23,13 +23,13 @@ def pendulumf():
 
 def projectilef():
     while True:
-        eqn = input("Are you working with position equations(p), velocity equations(v), maximum height(mh), time of flight(t), range(r), maximum range(mr) or equation of tranjectory(e)")
+        eqn = input("Are you working with position equations(p), velocity equations(v), maximum height(mh), time of flight(t), range(r), maximum range(mr) or equation of tranjectory(e)").lower()
         if eqn == "q":
             quit()
         elif eqn == "p":
-            p = input("Is it the horizontal(h) or vertical(v) equation you are finding?: ")
+            p = input("Is it the horizontal(h) or vertical(v) equation you are finding?: ").lower()
             if p == "h":
-                c = input("Do you want to find the initial velocity(v), the angle(a) or the time(t)?: ")
+                c = input("Do you want to find the initial velocity(v), the angle(a) or the time(t)?: ").lower()
                 if c == "v":
                     x = float(input("What is the horizontal equation?: "))
                     θ = float(input("What is the angle?: "))
@@ -56,7 +56,7 @@ def projectilef():
                     print(f"The time taken is {t:.2f}")
         
                 elif p == "v" :
-                    c = input("Do you want to find the intial velocity(v), the angle(a) or the time(t)")
+                    c = input("Do you want to find the intial velocity(v), the angle(a) or the time(t)").lower()
                     if c == "v":
                         y = float(input("What is the vertical position?: "))
                         t = float(input("What is the time taken?: "))
@@ -87,9 +87,9 @@ def projectilef():
                         print(f"The two possible times for t are {t1:.2f}s or {t2:.2f}s")
             
         elif eqn == "v":
-            C = input("Do you want to find the Horizontal velocity(h) or the Vertical velocity(v)?: ")            
+            C = input("Do you want to find the Horizontal velocity(h) or the Vertical velocity(v)?: ").lower()            
             if c == "h":
-                p = input("Do you want to find the initial velocity(v) or the angle(a)?: ")
+                p = input("Do you want to find the initial velocity(v) or the angle(a)?: ").lower()
                 if p == "v":
                     vx = float(input("What is the Horizontal velocity?: "))
                     θ = float(input("What is the angle?: "))
@@ -103,7 +103,7 @@ def projectilef():
                     a = math.radians(a)
                     θ = math.acos(a)
             elif c == "v":
-                p = input("Do you want to find the initial velocity(v), the angle(a) or the time(t)")
+                p = input("Do you want to find the initial velocity(v), the angle(a) or the time(t)").lower()
                 if p == "v":
                     vy = float(input("What is the vertical velocity?: "))
                     t = float("What is the time take?: ")
@@ -129,7 +129,7 @@ def projectilef():
                     th = math.radians(n / vo)
                     θ = math.sin(th)
         elif eqn == "mh":
-            p = input("Do you want to find the initial velocity(v) or the angle(a)")
+            p = input("Do you want to find the initial velocity(v) or the angle(a)").lower()
             if p == "v":
                 h = float(input("What is the maximum height?: "))
                 vo = float(input("What is the initial velocity?: "))
