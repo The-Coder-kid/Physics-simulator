@@ -44,7 +44,7 @@ def projectile(v, θ, t):
             y = v * math.sin(θ) - g*t
             print(f"The vertical velocity is {y:.2f}")
     elif eqn == "mh":
-        h = (v ** 2 * math.sin(θ) ** 2) / 2 * g
+        h = (v ** 2 * math.sin(θ) ** 2) / (2 * g)
         print(f"The maximum height is {h:.2f}")
     elif eqn == "t":
         t = (2 * v * math.sin(θ)) / g
@@ -55,9 +55,12 @@ def projectile(v, θ, t):
             print(f"Maximum range is {r:.2f}")
         else:
             print(f"range is {r:.2f}")
+    elif eqn == "mr":
+        mr = (v ** 2) / g
+        print(f"The maximum range is {mr:.2f}")
     elif eqn == "e":
         x = v * math.cos(θ) * t
-        y = math.tan(θ) * x - (g * x ** 2) / 2 * v ** 2 * math.cos(θ) ** 2
+        y = math.tan(θ) * x - (g * x ** 2) / (2 * v ** 2 * math.cos(θ) ** 2)
         print(f"The equation of trajectory is {y:.2f}")
     
 
