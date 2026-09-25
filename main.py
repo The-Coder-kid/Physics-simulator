@@ -7,6 +7,7 @@ pi = 3.142
 g = 9.81    
 
 while True:
+    print(Practicals)
     Choice = input("What practical do you want to do?: ").lower()
 
     if Choice in escape:
