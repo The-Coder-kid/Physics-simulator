@@ -153,9 +153,9 @@ def electromagnetic_induction():
     elif eqn == "flux":
         b = float(input("What is the magnetic field strength (T)?: "))
         a = float(input("What is the area (m^2)?: "))
-        theta = float(input("What is the angle between B and the normal (degrees)?: "))
-        theta = math.radians(theta)
-        phi = b * a * math.cos(theta)
+        θ  = float(input("What is the angle between B and the normal (degrees)?: "))
+        θ  = math.radians(θ )
+        phi = b * a * math.cos(θ )
         print(f"The magnetic flux is {phi:.4f} Wb")
  
     elif eqn == "motional":
@@ -519,35 +519,35 @@ def optics():
         if find == "angle2":
             n1 = float(input("What is n1?: "))
             n2 = float(input("What is n2?: "))
-            theta1 = float(input("What is angle 1 (degrees)?: "))
-            theta1 = math.radians(theta1)
-            theta2 = math.asin((n1 * math.sin(theta1)) / n2)
-            print(f"Angle 2 is {math.degrees(theta2):.2f} degrees")
+            θ 1 = float(input("What is angle 1 (degrees)?: "))
+            θ 1 = math.radians(θ 1)
+            θ 2 = math.asin((n1 * math.sin(θ 1)) / n2)
+            print(f"Angle 2 is {math.degrees(θ 2):.2f} degrees")
         elif find == "angle1":
             n1 = float(input("What is n1?: "))
             n2 = float(input("What is n2?: "))
-            theta2 = float(input("What is angle 2 (degrees)?: "))
-            theta2 = math.radians(theta2)
-            theta1 = math.asin((n2 * math.sin(theta2)) / n1)
-            print(f"Angle 1 is {math.degrees(theta1):.2f} degrees")
+            θ 2 = float(input("What is angle 2 (degrees)?: "))
+            θ 2 = math.radians(θ 2)
+            θ 1 = math.asin((n2 * math.sin(θ 2)) / n1)
+            print(f"Angle 1 is {math.degrees(θ 1):.2f} degrees")
         elif find == "n1":
             n2 = float(input("What is n2?: "))
-            theta1 = math.radians(float(input("What is angle 1 (degrees)?: ")))
-            theta2 = math.radians(float(input("What is angle 2 (degrees)?: ")))
-            n1 = (n2 * math.sin(theta2)) / math.sin(theta1)
+            θ 1 = math.radians(float(input("What is angle 1 (degrees)?: ")))
+            θ 2 = math.radians(float(input("What is angle 2 (degrees)?: ")))
+            n1 = (n2 * math.sin(θ 2)) / math.sin(θ 1)
             print(f"n1 is {n1:.4f}")
         elif find == "n2":
             n1 = float(input("What is n1?: "))
-            theta1 = math.radians(float(input("What is angle 1 (degrees)?: ")))
-            theta2 = math.radians(float(input("What is angle 2 (degrees)?: ")))
-            n2 = (n1 * math.sin(theta1)) / math.sin(theta2)
+            θ 1 = math.radians(float(input("What is angle 1 (degrees)?: ")))
+            θ 2 = math.radians(float(input("What is angle 2 (degrees)?: ")))
+            n2 = (n1 * math.sin(θ 1)) / math.sin(θ 2)
             print(f"n2 is {n2:.4f}")
  
     elif eqn == "critical":
         n1 = float(input("What is the refractive index of the denser medium (n1)?: "))
         n2 = float(input("What is the refractive index of the less dense medium (n2)?: "))
-        theta_c = math.asin(n2 / n1)
-        print(f"The critical angle is {math.degrees(theta_c):.2f} degrees")
+        θ _c = math.asin(n2 / n1)
+        print(f"The critical angle is {math.degrees(θ _c):.2f} degrees")
  
     elif eqn == "power":
         f = float(input("What is the focal length (m)?: "))
@@ -562,18 +562,18 @@ def electric_currents_magnetic_fields():
         q = float(input("What is the charge (C)?: "))
         v = float(input("What is the velocity (m/s)?: "))
         b = float(input("What is the magnetic field strength (T)?: "))
-        theta = float(input("What is the angle between v and B (degrees)?: "))
-        theta = math.radians(theta)
-        f = q * v * b * math.sin(theta)
+        θ  = float(input("What is the angle between v and B (degrees)?: "))
+        θ  = math.radians(θ )
+        f = q * v * b * math.sin(θ )
         print(f"The force on the charge is {f:.6e} N")
  
     elif eqn == "wireforce":
         b = float(input("What is the magnetic field strength (T)?: "))
         i = float(input("What is the current (A)?: "))
         l = float(input("What is the length of the wire (m)?: "))
-        theta = float(input("What is the angle between the wire and B (degrees)?: "))
-        theta = math.radians(theta)
-        f = b * i * l * math.sin(theta)
+        θ  = float(input("What is the angle between the wire and B (degrees)?: "))
+        θ  = math.radians(θ )
+        f = b * i * l * math.sin(θ )
         print(f"The force on the wire is {f:.4f} N")
  
     elif eqn == "wirefield":
@@ -599,9 +599,9 @@ def electric_currents_magnetic_fields():
         i = float(input("What is the current (A)?: "))
         a = float(input("What is the area of the loop (m^2)?: "))
         b = float(input("What is the magnetic field strength (T)?: "))
-        theta = float(input("What is the angle between the loop's normal and B (degrees)?: "))
-        theta = math.radians(theta)
-        tau = n * i * a * b * math.sin(theta)
+        θ  = float(input("What is the angle between the loop's normal and B (degrees)?: "))
+        θ  = math.radians(θ )
+        tau = n * i * a * b * math.sin(θ )
         print(f"The torque is {tau:.6f} N·m")
  
  
@@ -870,18 +870,18 @@ def magnetism_magnetic_forces():
         q = float(input("What is the charge (C)?: "))
         v = float(input("What is the velocity (m/s)?: "))
         b = float(input("What is the magnetic field strength (T)?: "))
-        theta = float(input("What is the angle between v and B (degrees)?: "))
-        theta = math.radians(theta)
-        f = q * v * b * math.sin(theta)
+        θ  = float(input("What is the angle between v and B (degrees)?: "))
+        θ  = math.radians(θ )
+        f = q * v * b * math.sin(θ )
         print(f"The magnetic force is {f:.6e} N")
  
     elif eqn == "wireforce":
         b = float(input("What is the magnetic field strength (T)?: "))
         i = float(input("What is the current (A)?: "))
         l = float(input("What is the length of the wire (m)?: "))
-        theta = float(input("What is the angle between the wire and B (degrees)?: "))
-        theta = math.radians(theta)
-        f = b * i * l * math.sin(theta)
+        θ  = float(input("What is the angle between the wire and B (degrees)?: "))
+        θ  = math.radians(θ )
+        f = b * i * l * math.sin(θ )
         print(f"The force on the wire is {f:.4f} N")
  
     elif eqn == "twowires":
