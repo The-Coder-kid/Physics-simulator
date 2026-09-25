@@ -1,5 +1,5 @@
 import math
-from functions import pendulumf, projectilef
+from find import pendulumf, projectilef
 escape = ["quit", "q"]
 Practicals = ["pendulum", "projectile", "m", "find"]
 pi = 3.142
