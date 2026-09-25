@@ -8,9 +8,16 @@ pi = 3.142
 g = 9.81    
 
 while True:
-    Choice = input("What practical do you want to do?: ").lower()
-   
-   
+    print("Welcome to the Physics practicals simulator")
+    print("The following are the practicals available in this program:", end=" ")
+
+    for index, practical in enumerate(Practicals):
+        if index == Total_practicals - 1:
+            print(practical, end=".")
+        else:
+            print(practical, end=", ")
+
+    print("\nType 'quit' or 'q' to exit the program")
 
     if Choice in escape:
         quit()
