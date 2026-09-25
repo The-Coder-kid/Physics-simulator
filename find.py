@@ -151,7 +151,7 @@ def circuitf():
         if eqn == "quit":
             quit()
 
-        elif eqn == "ohms":
+        elif eqn == "o":
             find = input("Do you want to find voltage(v), current(i) or resistance(r)?: ").lower()
             if find == "v":
                 i = float(input("What is the current (A)?: "))
@@ -169,7 +169,7 @@ def circuitf():
                 r = v / i
                 print(f"The resistance is {r:.2f} Ω")
 
-        elif eqn == "power":
+        elif eqn == "p":
             known = input("Do you know voltage and current(vi), current and resistance(ir) or voltage and resistance(vr)?: ").lower()
             find = input("Do you want to find voltage(v), current(i), resistance(r) or power(p)?: ").lower()
             if known == "vi":
@@ -221,7 +221,7 @@ def circuitf():
                     r = v ** 2 / p
                     print(f"The resistance is {r:.2f} Ω")
 
-        elif eqn == "series":
+        elif eqn == "s":
             n = int(input("How many resistors in total, including the unknown one?: "))
             total = float(input("What is the total series resistance (Ω)?: "))
             known_sum = 0
@@ -231,7 +231,7 @@ def circuitf():
             unknown = total - known_sum
             print(f"The unknown resistance is {unknown:.2f} Ω")
 
-        elif eqn == "parallel":
+        elif eqn == "pa":
             n = int(input("How many resistors in total, including the unknown one?: "))
             total = float(input("What is the total parallel resistance (Ω)?: "))
             known_reciprocal_sum = 0
@@ -242,7 +242,7 @@ def circuitf():
             unknown = 1 / reciprocal_unknown
             print(f"The unknown resistance is {unknown:.2f} Ω")
 
-        elif eqn == "emf":
+        elif eqn == "e":
             find = input("Do you want to find EMF(e), current(i) or internal resistance(r)?: ").lower()
             if find == "e":
                 v = float(input("What is the terminal voltage (V)?: "))
