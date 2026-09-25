@@ -2,7 +2,7 @@ import math
 from find import pendulumf, projectilef
 from functions import *
 escape = ["quit", "q"]
-Practicals = ["pendulum", "projectile", "m", "find"]
+Practicals = ["pendulum", "projectile", "circuit", "m", "find"]
 pi = 3.142
 g = 9.81    
 
@@ -50,6 +50,8 @@ while True:
                     print("Value must be a number")
                     continue
             projectile(v, θ, t)
+        elif Choice == "circuit":
+            circuit()
         elif Choice == "find":
             aspect = input("Under what aspect are you trying to solve on?: ")
             if aspect not in ["pendulum", "projectile"]:

@@ -59,3 +59,72 @@ def projectile(v, θ, t):
         x = v * math.cos(θ) * t
         y = math.tan(θ) * x - (g * x ** 2) / (2 * v ** 2 * math.cos(θ) ** 2)
         print(f"The equation of trajectory is {y:.2f}")
+
+def circuit():
+    eqn = input("Are you working with Ohm's law, series resistance, parallel resistance, power, EMF/internal resistance or charge (ohms, series, parallel, power, emf, q): ").lower()
+
+    if eqn == "ohms":
+        find = input("Do you want to find voltage, current or resistance (v, i, r): ").lower()
+        if find == "v":
+            i = float(input("What is the current (A)?: "))
+            r = float(input("What is the resistance (Ω)?: "))
+            v = i * r
+            print(f"The voltage is {v:.2f} V")
+        elif find == "i":
+            v = float(input("What is the voltage (V)?: "))
+            r = float(input("What is the resistance (Ω)?: "))
+            i = v / r
+            print(f"The current is {i:.2f} A")
+        elif find == "r":
+            v = float(input("What is the voltage (V)?: "))
+            i = float(input("What is the current (A)?: "))
+            r = v / i
+            print(f"The resistance is {r:.2f} Ω")
+
+    elif eqn == "series":
+        n = int(input("How many resistors are in series?: "))
+        total = 0
+        for x in range(n):
+            r = float(input(f"Enter resistance {x + 1} (Ω): "))
+            total += r
+        print(f"The total series resistance is {total:.2f} Ω")
+
+    elif eqn == "parallel":
+        n = int(input("How many resistors are in parallel?: "))
+        reciprocal_total = 0
+        for x in range(n):
+            r = float(input(f"Enter resistance {x + 1} (Ω): "))
+            reciprocal_total += 1 / r
+        total = 1 / reciprocal_total
+        print(f"The total parallel resistance is {total:.2f} Ω")
+
+    elif eqn == "power":
+        known = input("Which values do you know (vi, ir, vr): ").lower()
+        if known == "vi":
+            v = float(input("What is the voltage (V)?: "))
+            i = float(input("What is the current (A)?: "))
+            p = v * i
+            print(f"The power is {p:.2f} W")
+        elif known == "ir":
+            i = float(input("What is the current (A)?: "))
+            r = float(input("What is the resistance (Ω)?: "))
+            p = i ** 2 * r
+            print(f"The power is {p:.2f} W")
+        elif known == "vr":
+            v = float(input("What is the voltage (V)?: "))
+            r = float(input("What is the resistance (Ω)?: "))
+            p = v ** 2 / r
+            print(f"The power is {p:.2f} W")
+
+    elif eqn == "emf":
+        emf = float(input("What is the EMF (V)?: "))
+        i = float(input("What is the current (A)?: "))
+        r = float(input("What is the internal resistance (Ω)?: "))
+        v = emf - i * r
+        print(f"The terminal voltage is {v:.2f} V")
+
+    elif eqn == "q":
+        i = float(input("What is the current (A)?: "))
+        t = float(input("What is the time (s)?: "))
+        q = i * t
+        print(f"The charge is {q:.2f} C")
