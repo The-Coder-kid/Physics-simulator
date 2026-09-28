@@ -171,6 +171,7 @@ def circuit():
     
 
 def electromagnetic_induction():
+    ei = ["EMF(emf)", "Magnetic flux(flux)", "Motional EMF(motion)", "Self inductance(self)", "Inductor energy(energy)", "Mutual inducance(mutual)", "Transformer(transformer)"]
     eqn = input("Are you working with EMF(emf), magnetic flux(flux), motional EMF(motional), self-inductance(self), inductor energy(energy), mutual inductance(mutual) or transformer(transformer): ").lower()
  
     if eqn == "emf":
