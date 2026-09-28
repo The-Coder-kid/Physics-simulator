@@ -16,7 +16,7 @@ while True:
     print("Welcome to the Physics practicals simulator")
     print("The following are the practicals available in this program: ")
     for item in Practicals:
-        print(f" - {item}")
+        print(f" - {Practicals}")
     print("Type 'quit' or 'q' to exit the program")
     Choice = input("What practical do you want to do?: ").lower()
     if Choice in escape:
@@ -42,7 +42,31 @@ while True:
                 pendulum(length, unit_l)
 
         elif Choice == "projectile":
-            projectile()
+            while True:
+                try:
+                    v = float(input("What is the initial velocity of the projectile in meters per second (m/s)? "))
+                    break
+                except:
+                    ValueError
+                    print("Value must be a number")
+                    continue
+            while True:
+                try:
+                    θ = float(input("What is the angle of projection with respect to the horizontal in degrees? "))
+                    break
+                except:
+                    ValueError
+                    print("Value must be a number")
+                    continue
+            while True:
+                try:
+                    t = float(input("How many seconds did the projectile take to complete its flight? "))
+                    break
+                except:
+                    ValueError
+                    print("Value must be a number")
+                    continue
+            projectile(v, θ, t)
         elif Choice == "circuit":
             circuit()
         elif Choice == "electromagnetic induction":
