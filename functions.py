@@ -28,7 +28,6 @@ def pendulum(length, unit_l):
 
 
 def projectile():
-    θ = math.radians(θ)
     while True:
         try:
             v = float(input("What is the initial velocity of the projectile in meters per second (m/s)? "))
@@ -53,6 +52,7 @@ def projectile():
             ValueError
             print("Value must be a number")
             continue
+    θ = math.radians(θ)
     projectilel = ["position equations(p)", "Velocity equations(v)", " Maximum height(mh)", " Time of flight(t)", "Range(r)", "Maximum range(mr)", "Equation of trajectory(e)"]
     for item in projectilel:
         print(f"- {item}")
