@@ -98,7 +98,10 @@ def projectile():
         print(f"The equation of trajectory is {y:.2f}")
 
 def circuit():
-    eqn = input("Are you working with Ohm's law, series resistance, parallel resistance, power, EMF/internal resistance or charge (ohms, series, parallel, power, emf, q): ").lower()
+    circuitl = ["Ohm's Law(ohms)", "Series resistance(series)", "Parallel resistance(parallel)", "Power", "EMF/ internal resistance(emf)"]
+    for item in circuitl:
+        print(f" - {item}")
+    eqn = input("What are you working on?: ").lower()
 
     if eqn == "ohms":
         find = input("Do you want to find voltage, current or resistance (v, i, r): ").lower()
