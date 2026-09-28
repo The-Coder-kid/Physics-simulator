@@ -1,18 +1,22 @@
 1. Bug Fixes and Code Completetion:
-    Incomplete code:
+    * Incomplete code:
         The function magnetism_magnetic_forcesf cuts off abruptly at eqn == "twowires" near separation(r).
-    Unbound Variables: 
+    * Unbound Variables: 
         In projectilef() under trajectory calculation (eqn == "e"), the variable v is used in (2 * v ** 2 * math.cos(θ) ** 2) 
         without ever being defined or requested from the user.
-    Domain Errors: 
+    * Domain Errors: 
         Tracing inverse trigonometric functions like math.asin() or math.acos() 
         without checking if the argument is within $[-1, 1]$ causes standard ValueError crashes.
 
 2. Robut Error Handling and Input Validation
-    Physical Boundary Checks: 
+    * Physical Boundary Checks: 
         Reject unphysical inputs (e.g., negative mass, negative resistance, speeds exceeding $c$, temperatures below $0\text{ K}$).
-    Zero Division Safeguards: 
+    * Zero Division Safeguards: 
         Intercept divisions where denominators could be zero (e.g., zero time, zero resistance, zero area).
-    Structured Exception Types: 
+    * Structured Exception Types: 
         Create custom exceptions (e.g., InvalidPhysicalInputError, DomainError) so the UI layer can catch specific errors and 
         present human-readable messages to the user.
+
+3. Unit Conversion Engine
+    * Implement standard unit conversion helpers to normalize inputs to SI units before running calculations.
+    * Return results with explicit SI units and option to format in engineering/scientific notation.
