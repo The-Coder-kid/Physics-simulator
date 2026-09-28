@@ -1,10 +1,13 @@
 import math
-from find import pendulumf, projectilef
+from find import (pendulumf, projectilef, circuitf, electromagnetic_inductionf, wave_motion_soundf,
+                  thermal_propertiesf, shmf, fluid_dynamicsf, opticsf, electric_currents_magnetic_fieldsf,
+                  nuclear_physicsf, quantum_mechanicsf, thermodynamicsf, capacitors_circuitsf,
+                  resistors_ohms_lawf, magnetism_magnetic_forcesf)
 from functions import *
 escape = ["quit", "q"]
-Practicals = ["pendulum", "projectile", "circuit", "electromagnetic induction", "wave motion", "Thermal properties of matter", 
-              "Simple harmonic motion", "Fluid Dynamics", "Optics", "Electric currents and magnetic fields", "Nuclear physics", 
-              "Quantum mechanics", "Thermodynamics", "Capacitors and electric circuits", "Resistors and Ohm's law", "Magnetism and magnetic forces", "m", "find"]
+Practicals = ["pendulum", "projectile", "circuit", "electromagnetic induction", "wave motion", "thermal properties of matter", 
+              "simple harmonic motion", "fluid dynamics", "optics", "electric currents and magnetic fields", "nuclear physics", 
+              "quantum mechanics", "thermodynamics", "capacitors and electric circuits", "resistors and ohm's law", "magnetism and magnetic forces", "m", "find"]
 Total_practicals = len(Practicals)
 pi = 3.142
 g = 9.81    
@@ -13,7 +16,7 @@ while True:
     print("Welcome to the Physics practicals simulator")
     print(f"The following are the practicals available in this program: {Practicals}")
     print("Type 'quit' or 'q' to exit the program")
-    Choice = input("What practical do you want to do?: ")
+    Choice = input("What practical do you want to do?: ").lower()
     if Choice in escape:
         quit()
 
@@ -64,13 +67,66 @@ while True:
             projectile(v, θ, t)
         elif Choice == "circuit":
             circuit()
+        elif Choice == "electromagnetic induction":
+            electromagnetic_induction()
+        elif Choice == "wave motion":
+            wave_motion_sound()
+        elif Choice == "thermal properties of matter":
+            thermal_properties()
+        elif Choice == "simple harmonic motion":
+            shm()
+        elif Choice == "fluid dynamics":
+            fluid_dynamics()
+        elif Choice == "optics":
+            optics()
+        elif Choice == "electric currents and magnetic fields":
+            electric_currents_magnetic_fields()
+        elif Choice == "nuclear physics":
+            nuclear_physics()
+        elif Choice == "quantum mechanics":
+            quantum_mechanics()
+        elif Choice == "thermodynamics":
+            thermodynamics()
+        elif Choice == "capacitors and electric circuits":
+            capacitors_circuits()
+        elif Choice == "resistors and ohm's law":
+            resistors_ohms_law()
+        elif Choice == "magnetism and magnetic forces":
+            magnetism_magnetic_forces()
         elif Choice == "find":
-            aspect = input("Under what aspect are you trying to solve on?: ")
-            if aspect not in ["pendulum", "projectile"]:
+            aspect = input("Under what aspect are you trying to solve on?: ").lower()
+            if aspect not in Practicals or aspect in ["m", "find"]:
                 print("Pick an aspect in the current list of practicals")
                 continue
-            elif aspect in ["pendulum", "projectile"]:
-                if aspect == "pendulum":
-                    pendulumf()
-                elif aspect == "projectile":
-                    projectilef()
+            elif aspect == "pendulum":
+                pendulumf()
+            elif aspect == "projectile":
+                projectilef()
+            elif aspect == "circuit":
+                circuitf()
+            elif aspect == "electromagnetic induction":
+                electromagnetic_inductionf()
+            elif aspect == "wave motion":
+                wave_motion_soundf()
+            elif aspect == "thermal properties of matter":
+                thermal_propertiesf()
+            elif aspect == "simple harmonic motion":
+                shmf()
+            elif aspect == "fluid dynamics":
+                fluid_dynamicsf()
+            elif aspect == "optics":
+                opticsf()
+            elif aspect == "electric currents and magnetic fields":
+                electric_currents_magnetic_fieldsf()
+            elif aspect == "nuclear physics":
+                nuclear_physicsf()
+            elif aspect == "quantum mechanics":
+                quantum_mechanicsf()
+            elif aspect == "thermodynamics":
+                thermodynamicsf()
+            elif aspect == "capacitors and electric circuits":
+                capacitors_circuitsf()
+            elif aspect == "resistors and ohm's law":
+                resistors_ohms_lawf()
+            elif aspect == "magnetism and magnetic forces":
+                magnetism_magnetic_forcesf()
