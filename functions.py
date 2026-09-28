@@ -1,4 +1,5 @@
 import math
+
 pi = 3.142
 g = 9.81
 h_planck = 6.626e-34      # J·s
@@ -14,13 +15,15 @@ I0_sound = 1e-12
 
 def pendulum(length, unit_l):
     print(f"The length of the rope is: {length}{unit_l}")
-    p = input("Do you want to find the period of the pendulum? (yes/no): ")
-    if p.lower() in ["y", "yes"]:
+    penduluml = ["Period(p)", "Frequency(f)"]
+    for item in penduluml:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
+    if eqn in ["p", "period"]:
         sqrt = math.sqrt(length / 9.81)
         period = 2 * pi * sqrt
         print(f"The period of the pendulum is: {period:.2f} seconds")
-    f = input("Do you want to find the frequency of the pendulum? (yes/no): ")
-    if f.lower() in ["y", "yes"]:
+    elif eqn in ["f", "frequency"]:
         sqrt = math.sqrt(length / 9.81)
         period = 2 * pi * sqrt
         frequency = 1 / period
@@ -32,32 +35,28 @@ def projectile():
         try:
             v = float(input("What is the initial velocity of the projectile in meters per second (m/s)? "))
             break
-        except:
-                ValueError
-                print("Value must be a number")
-                continue
+        except ValueError:
+            print("Value must be a number")
+            continue
     while True:
         try:
             θ = float(input("What is the angle of projection with respect to the horizontal in degrees? "))
             break
-        except:
-            ValueError
+        except ValueError:
             print("Value must be a number")
             continue
     while True:
         try:
             t = float(input("How many seconds did the projectile take to complete its flight? "))
             break
-        except:
-            ValueError
+        except ValueError:
             print("Value must be a number")
             continue
     θ = math.radians(θ)
-    projectilel = ["position equations(p)", "Velocity equations(v)", " Maximum height(mh)", " Time of flight(t)", "Range(r)", "Maximum range(mr)", "Equation of trajectory(e)"]
-    print("These are the various aspects under projectile:")
+    projectilel = ["position equations(p)", "Velocity equations(v)", "Maximum height(mh)", "Time of flight(t)", "Range(r)", "Maximum range(mr)", "Equation of trajectory(e)"]
     for item in projectilel:
         print(f" - {item}")
-    eqn = input("What are you working on?: ").lower()
+    eqn = input("What are you working with: ").lower()
     if eqn == "p":
         position_eqn = input("Do you want to do horizontal or vertical postion (h or v): ")
 
@@ -97,11 +96,12 @@ def projectile():
         y = math.tan(θ) * x - (g * x ** 2) / (2 * v ** 2 * math.cos(θ) ** 2)
         print(f"The equation of trajectory is {y:.2f}")
 
+
 def circuit():
     circuitl = ["Ohm's Law(ohms)", "Series resistance(series)", "Parallel resistance(parallel)", "Power", "EMF/ internal resistance(emf)"]
     for item in circuitl:
         print(f" - {item}")
-    eqn = input("What are you working on?: ").lower()
+    eqn = input("What are you working with: ").lower()
 
     if eqn == "ohms":
         find = input("Do you want to find voltage, current or resistance (v, i, r): ").lower()
@@ -168,13 +168,13 @@ def circuit():
         t = float(input("What is the time (s)?: "))
         q = i * t
         print(f"The charge is {q:.2f} C")
-    
+
 
 def electromagnetic_induction():
-    ei = ["EMF(emf)", "Magnetic flux(flux)", "Motional EMF(motion)", "Self inductance(self)", "Inductor energy(energy)", "Mutual inducance(mutual)", "Transformer(transformer)"]
-    for item in ei:
+    electromagnetic_inductionl = ["EMF(emf)", "Magnetic flux(flux)", "Motional EMF(motion)", "Self inductance(self)", "Inductor energy(energy)", "Mutual inducance(mutual)", "Transformer(transformer)"]
+    for item in electromagnetic_inductionl:
         print(f" - {item}")
-    eqn = input("What are you working on?: ").lower()
+    eqn = input("What are you working with: ").lower()
  
     if eqn == "emf":
         n = float(input("What is the number of turns (N)?: "))
@@ -191,7 +191,7 @@ def electromagnetic_induction():
         phi = b * a * math.cos(θ)
         print(f"The magnetic flux is {phi:.4f} Wb")
  
-    elif eqn == "motional":
+    elif eqn == "motion":
         b = float(input("What is the magnetic field strength (T)?: "))
         l = float(input("What is the length of the conductor (m)?: "))
         v = float(input("What is the velocity (m/s)?: "))
@@ -244,10 +244,13 @@ def electromagnetic_induction():
             ns = float(input("What is the number of secondary turns?: "))
             np_ = ns * (vp / vs)
             print(f"The number of primary turns is {np_:.2f}")
- 
- 
+
+
 def wave_motion_sound():
-    eqn = input("Are you working with wave speed(speed), period(period), speed of sound in air(sound), Doppler effect(doppler), intensity(intensity), sound level(level), beats(beats), standing wave on a string(string), closed pipe(closed) or open pipe(open): ").lower()
+    wave_motion_soundl = ["Wave speed(speed)", "Period(period)", "Speed of sound in air(sound)", "Doppler effect(doppler)", "Intensity(intensity)", "Sound level(level)", "Beats(beats)", "Standing wave on a string(string)", "Closed pipe(closed)", "Open pipe(open)"]
+    for item in wave_motion_soundl:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
  
     if eqn == "speed":
         f = float(input("What is the frequency (Hz)?: "))
@@ -310,10 +313,13 @@ def wave_motion_sound():
         l = float(input("What is the length of the pipe (m)?: "))
         f = (n * v) / (2 * l)
         print(f"The frequency of harmonic {n} is {f:.4f} Hz")
- 
- 
+
+
 def thermal_properties():
-    eqn = input("Are you working with heat energy(heat), latent heat(latent), linear expansion(linear), area expansion(area), volume expansion(volume), thermal conduction(conduction) or ideal gas law(gas): ").lower()
+    thermal_propertiesl = ["Heat energy(heat)", "Latent heat(latent)", "Linear expansion(linear)", "Area expansion(area)", "Volume expansion(volume)", "Thermal conduction(conduction)", "Ideal gas law(gas)"]
+    for item in thermal_propertiesl:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
  
     if eqn == "heat":
         m = float(input("What is the mass (kg)?: "))
@@ -383,10 +389,13 @@ def thermal_properties():
             n = float(input("What is the number of moles?: "))
             t = (p * v) / (n * R_gas)
             print(f"The temperature is {t:.4f} K")
- 
- 
+
+
 def shm():
-    eqn = input("Are you working with displacement(x), velocity(v), acceleration(a), period of a spring(spring), period of a pendulum(pendulum), max velocity(vmax), max acceleration(amax) or energy(energy): ").lower()
+    shml = ["Displacement(x)", "Velocity(v)", "Acceleration(a)", "Period of a spring(spring)", "Period of a pendulum(pendulum)", "Max velocity(vmax)", "Max acceleration(amax)", "Energy(energy)"]
+    for item in shml:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
  
     if eqn == "x":
         amp = float(input("What is the amplitude (m)?: "))
@@ -450,10 +459,13 @@ def shm():
             x = float(input("What is the displacement (m)?: "))
             pe = 0.5 * k * x ** 2
             print(f"The potential energy is {pe:.4f} J")
- 
- 
+
+
 def fluid_dynamics():
-    eqn = input("Are you working with density(density), pressure from force(pressure), pressure in a fluid(depth), Pascal's principle(pascal), Archimedes' principle(archimedes), continuity equation(continuity), Bernoulli's equation(bernoulli) or Poiseuille's law(poiseuille): ").lower()
+    fluid_dynamicsl = ["Density(density)", "Pressure from force(pressure)", "Pressure in a fluid(depth)", "Pascal's principle(pascal)", "Archimedes' principle(archimedes)", "Continuity equation(continuity)", "Bernoulli's equation(bernoulli)", "Poiseuille's law(poiseuille)"]
+    for item in fluid_dynamicsl:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
  
     if eqn == "density":
         m = float(input("What is the mass (kg)?: "))
@@ -511,10 +523,13 @@ def fluid_dynamics():
         l = float(input("What is the length of the pipe (m)?: "))
         q = (math.pi * r ** 4 * dp) / (8 * eta * l)
         print(f"The volumetric flow rate is {q:.8f} m^3/s")
- 
- 
+
+
 def optics():
-    eqn = input("Are you working with the mirror/lens equation(lens), magnification(mag), lens maker's equation(maker), Snell's law(snell), critical angle(critical) or power of a lens(power): ").lower()
+    opticsl = ["Mirror/lens equation(lens)", "Magnification(mag)", "Lens maker's equation(maker)", "Snell's law(snell)", "Critical angle(critical)", "Power of a lens(power)"]
+    for item in opticsl:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
  
     if eqn == "lens":
         find = input("Do you want to find focal length(f), object distance(do) or image distance(di): ").lower()
@@ -586,10 +601,13 @@ def optics():
         f = float(input("What is the focal length (m)?: "))
         p = 1 / f
         print(f"The power of the lens is {p:.4f} D")
- 
- 
+
+
 def electric_currents_magnetic_fields():
-    eqn = input("Are you working with force on a moving charge(chargeforce), force on a current-carrying wire(wireforce), field of a long straight wire(wirefield), field of a solenoid(solenoid), field at the center of a loop(loop) or torque on a current loop(torque): ").lower()
+    electric_currents_magnetic_fieldsl = ["Force on a moving charge(chargeforce)", "Force on a current-carrying wire(wireforce)", "Field of a long straight wire(wirefield)", "Field of a solenoid(solenoid)", "Field at the center of a loop(loop)", "Torque on a current loop(torque)"]
+    for item in electric_currents_magnetic_fieldsl:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
  
     if eqn == "chargeforce":
         q = float(input("What is the charge (C)?: "))
@@ -636,10 +654,13 @@ def electric_currents_magnetic_fields():
         θ = math.radians(θ)
         tau = n * i * a * b * math.sin(θ)
         print(f"The torque is {tau:.6f} N·m")
- 
- 
+
+
 def nuclear_physics():
-    eqn = input("Are you working with radioactive decay(decay), half-life(halflife), activity(activity), mass-energy equivalence(massenergy) or binding energy(binding): ").lower()
+    nuclear_physicsl = ["Radioactive decay(decay)", "Half-life(halflife)", "Activity(activity)", "Mass-energy equivalence(massenergy)", "Binding energy(binding)"]
+    for item in nuclear_physicsl:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
  
     if eqn == "decay":
         n0 = float(input("What is the initial number of nuclei?: "))
@@ -674,10 +695,13 @@ def nuclear_physics():
         dm = float(input("What is the mass defect (kg)?: "))
         de = dm * c_light ** 2
         print(f"The binding energy is {de:.4e} J")
- 
- 
+
+
 def quantum_mechanics():
-    eqn = input("Are you working with photon energy(photon), the photoelectric effect(photoelectric) or de Broglie wavelength(debroglie): ").lower()
+    quantum_mechanicsl = ["Photon energy(photon)", "Photoelectric effect(photoelectric)", "De Broglie wavelength(debroglie)"]
+    for item in quantum_mechanicsl:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
  
     if eqn == "photon":
         find = input("Do you want to find energy(e), frequency(f) or wavelength(w): ").lower()
@@ -705,238 +729,40 @@ def quantum_mechanics():
         v = float(input("What is the velocity (m/s)?: "))
         wavelength = h_planck / (m * v)
         print(f"The de Broglie wavelength is {wavelength:.4e} m")
- 
- 
+
+
 def thermodynamics():
-    eqn = input("Are you working with the first law of thermodynamics(first), work done by a gas(work), efficiency(efficiency), Carnot efficiency(carnot) or entropy(entropy): ").lower()
- 
+    thermodynamicsl = ["First law of thermodynamics(first)", "Work done by a gas(work)", "Efficiency(efficiency)", "Carnot efficiency(carnot)", "Entropy(entropy)"]
+    for item in thermodynamicsl:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
+
     if eqn == "first":
-        find = input("Do you want to find change in internal energy(u), heat(q) or work(w): ").lower()
-        if find == "u":
-            q = float(input("What is the heat added to the system (J)?: "))
-            w = float(input("What is the work done by the system (J)?: "))
-            du = q - w
-            print(f"The change in internal energy is {du:.4f} J")
-        elif find == "q":
-            du = float(input("What is the change in internal energy (J)?: "))
-            w = float(input("What is the work done by the system (J)?: "))
-            q = du + w
-            print(f"The heat added is {q:.4f} J")
-        elif find == "w":
-            q = float(input("What is the heat added to the system (J)?: "))
-            du = float(input("What is the change in internal energy (J)?: "))
-            w = q - du
-            print(f"The work done by the system is {w:.4f} J")
- 
+        q = float(input("What is the heat added to the system (J)?: "))
+        w = float(input("What is the work done by the system (J)?: "))
+        du = q - w
+        print(f"The change in internal energy is {du:.4f} J")
+
     elif eqn == "work":
         p = float(input("What is the pressure (Pa)?: "))
         dv = float(input("What is the change in volume (m^3)?: "))
         w = p * dv
         print(f"The work done is {w:.4f} J")
- 
+
     elif eqn == "efficiency":
-        w_out = float(input("What is the work output (J)?: "))
-        q_in = float(input("What is the heat input (J)?: "))
-        eff = w_out / q_in
-        print(f"The efficiency is {eff * 100:.2f}%")
- 
+        w = float(input("What is the work done (J)?: "))
+        qh = float(input("What is the heat input at high temp (J)?: "))
+        eff = (w / qh) * 100
+        print(f"The efficiency is {eff:.2f}%")
+
     elif eqn == "carnot":
-        t_cold = float(input("What is the cold reservoir temperature (K)?: "))
-        t_hot = float(input("What is the hot reservoir temperature (K)?: "))
-        eff = 1 - (t_cold / t_hot)
-        print(f"The Carnot efficiency is {eff * 100:.2f}%")
- 
+        th = float(input("What is the temperature of the hot reservoir (K)?: "))
+        tc = float(input("What is the temperature of the cold reservoir (K)?: "))
+        eff = (1 - (tc / th)) * 100
+        print(f"The Carnot efficiency is {eff:.2f}%")
+
     elif eqn == "entropy":
-        q = float(input("What is the heat transferred (J)?: "))
+        q = float(input("What is the heat added (J)?: "))
         t = float(input("What is the temperature (K)?: "))
         ds = q / t
-        print(f"The change in entropy is {ds:.6f} J/K")
- 
- 
-def capacitors_circuits():
-    eqn = input("Are you working with capacitance(cap), energy stored(energy), series capacitance(series), parallel capacitance(parallel) or RC charging/discharging(rc): ").lower()
- 
-    if eqn == "cap":
-        find = input("Do you want to find capacitance(c), charge(q) or voltage(v): ").lower()
-        if find == "c":
-            q = float(input("What is the charge (C)?: "))
-            v = float(input("What is the voltage (V)?: "))
-            capa = q / v
-            print(f"The capacitance is {capa:.6e} F")
-        elif find == "q":
-            capa = float(input("What is the capacitance (F)?: "))
-            v = float(input("What is the voltage (V)?: "))
-            q = capa * v
-            print(f"The charge is {q:.6e} C")
-        elif find == "v":
-            q = float(input("What is the charge (C)?: "))
-            capa = float(input("What is the capacitance (F)?: "))
-            v = q / capa
-            print(f"The voltage is {v:.4f} V")
- 
-    elif eqn == "energy":
-        capa = float(input("What is the capacitance (F)?: "))
-        v = float(input("What is the voltage (V)?: "))
-        e = 0.5 * capa * v ** 2
-        print(f"The energy stored is {e:.6e} J")
- 
-    elif eqn == "series":
-        n = int(input("How many capacitors are in series?: "))
-        reciprocal_total = 0
-        for x in range(n):
-            c = float(input(f"Enter capacitance {x + 1} (F): "))
-            reciprocal_total += 1 / c
-        total = 1 / reciprocal_total
-        print(f"The total series capacitance is {total:.6e} F")
- 
-    elif eqn == "parallel":
-        n = int(input("How many capacitors are in parallel?: "))
-        total = 0
-        for x in range(n):
-            c = float(input(f"Enter capacitance {x + 1} (F): "))
-            total += c
-        print(f"The total parallel capacitance is {total:.6e} F")
- 
-    elif eqn == "rc":
-        find = input("Do you want to find charging voltage(charge) or discharging voltage(discharge): ").lower()
-        v0 = float(input("What is the initial/source voltage (V)?: "))
-        r = float(input("What is the resistance (Ω)?: "))
-        capa = float(input("What is the capacitance (F)?: "))
-        t = float(input("What is the time (s)?: "))
-        tau = r * capa
-        if find == "charge":
-            v = v0 * (1 - math.exp(-t / tau))
-            print(f"The voltage across the capacitor is {v:.4f} V")
-        elif find == "discharge":
-            v = v0 * math.exp(-t / tau)
-            print(f"The voltage across the capacitor is {v:.4f} V")
- 
- 
-def resistors_ohms_law():
-    eqn = input("Are you working with Ohm's law(ohms), series resistors(series), parallel resistors(parallel), power(power) or resistivity(resistivity): ").lower()
- 
-    if eqn == "ohms":
-        find = input("Do you want to find voltage(v), current(i) or resistance(r): ").lower()
-        if find == "v":
-            i = float(input("What is the current (A)?: "))
-            r = float(input("What is the resistance (Ω)?: "))
-            v = i * r
-            print(f"The voltage is {v:.4f} V")
-        elif find == "i":
-            v = float(input("What is the voltage (V)?: "))
-            r = float(input("What is the resistance (Ω)?: "))
-            i = v / r
-            print(f"The current is {i:.4f} A")
-        elif find == "r":
-            v = float(input("What is the voltage (V)?: "))
-            i = float(input("What is the current (A)?: "))
-            r = v / i
-            print(f"The resistance is {r:.4f} Ω")
- 
-    elif eqn == "series":
-        n = int(input("How many resistors are in series?: "))
-        total = 0
-        for x in range(n):
-            r = float(input(f"Enter resistance {x + 1} (Ω): "))
-            total += r
-        print(f"The total series resistance is {total:.4f} Ω")
- 
-    elif eqn == "parallel":
-        n = int(input("How many resistors are in parallel?: "))
-        reciprocal_total = 0
-        for x in range(n):
-            r = float(input(f"Enter resistance {x + 1} (Ω): "))
-            reciprocal_total += 1 / r
-        total = 1 / reciprocal_total
-        print(f"The total parallel resistance is {total:.4f} Ω")
- 
-    elif eqn == "power":
-        known = input("Which values do you know (vi, ir, vr): ").lower()
-        if known == "vi":
-            v = float(input("What is the voltage (V)?: "))
-            i = float(input("What is the current (A)?: "))
-            p = v * i
-            print(f"The power is {p:.4f} W")
-        elif known == "ir":
-            i = float(input("What is the current (A)?: "))
-            r = float(input("What is the resistance (Ω)?: "))
-            p = i ** 2 * r
-            print(f"The power is {p:.4f} W")
-        elif known == "vr":
-            v = float(input("What is the voltage (V)?: "))
-            r = float(input("What is the resistance (Ω)?: "))
-            p = v ** 2 / r
-            print(f"The power is {p:.4f} W")
- 
-    elif eqn == "resistivity":
-        find = input("Do you want to find resistivity(rho), resistance(r), length(l) or area(a): ").lower()
-        if find == "rho":
-            r = float(input("What is the resistance (Ω)?: "))
-            a = float(input("What is the cross-sectional area (m^2)?: "))
-            l = float(input("What is the length (m)?: "))
-            rho = (r * a) / l
-            print(f"The resistivity is {rho:.6e} Ω·m")
-        elif find == "r":
-            rho = float(input("What is the resistivity (Ω·m)?: "))
-            l = float(input("What is the length (m)?: "))
-            a = float(input("What is the cross-sectional area (m^2)?: "))
-            r = (rho * l) / a
-            print(f"The resistance is {r:.4f} Ω")
-        elif find == "l":
-            r = float(input("What is the resistance (Ω)?: "))
-            a = float(input("What is the cross-sectional area (m^2)?: "))
-            rho = float(input("What is the resistivity (Ω·m)?: "))
-            l = (r * a) / rho
-            print(f"The length is {l:.4f} m")
-        elif find == "a":
-            rho = float(input("What is the resistivity (Ω·m)?: "))
-            l = float(input("What is the length (m)?: "))
-            r = float(input("What is the resistance (Ω)?: "))
-            a = (rho * l) / r
-            print(f"The cross-sectional area is {a:.6e} m^2")
- 
- 
-def magnetism_magnetic_forces():
-    eqn = input("Are you working with force on a moving charge(chargeforce), force on a current-carrying wire(wireforce), force between two parallel wires(twowires), radius of circular motion(radius) or magnetic dipole moment(dipole): ").lower()
- 
-    if eqn == "chargeforce":
-        q = float(input("What is the charge (C)?: "))
-        v = float(input("What is the velocity (m/s)?: "))
-        b = float(input("What is the magnetic field strength (T)?: "))
-        θ = float(input("What is the angle between v and B (degrees)?: "))
-        θ = math.radians(θ)
-        f = q * v * b * math.sin(θ)
-        print(f"The magnetic force is {f:.6e} N")
- 
-    elif eqn == "wireforce":
-        b = float(input("What is the magnetic field strength (T)?: "))
-        i = float(input("What is the current (A)?: "))
-        l = float(input("What is the length of the wire (m)?: "))
-        θ = float(input("What is the angle between the wire and B (degrees)?: "))
-        θ = math.radians(θ)
-        f = b * i * l * math.sin(θ)
-        print(f"The force on the wire is {f:.4f} N")
- 
-    elif eqn == "twowires":
-        i1 = float(input("What is the current in the first wire (A)?: "))
-        i2 = float(input("What is the current in the second wire (A)?: "))
-        l = float(input("What is the length of the wires (m)?: "))
-        r = float(input("What is the distance between the wires (m)?: "))
-        f = (mu0 * i1 * i2 * l) / (2 * math.pi * r)
-        print(f"The force between the wires is {f:.6e} N")
- 
-    elif eqn == "radius":
-        m = float(input("What is the mass of the particle (kg)?: "))
-        v = float(input("What is the velocity (m/s)?: "))
-        q = float(input("What is the charge (C)?: "))
-        b = float(input("What is the magnetic field strength (T)?: "))
-        r = (m * v) / (q * b)
-        print(f"The radius of the circular path is {r:.6e} m")
- 
-    elif eqn == "dipole":
-        n = float(input("What is the number of turns?: "))
-        i = float(input("What is the current (A)?: "))
-        a = float(input("What is the area of the loop (m^2)?: "))
-        m = n * i * a
-        print(f"The magnetic dipole moment is {m:.6e} A·m^2")
- 
+        print(f"The change in entropy is {ds:.4f} J/K")
