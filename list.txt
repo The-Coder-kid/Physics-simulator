@@ -1,0 +1,9 @@
+Bug Fixes and Code Completetion:
+    Incomplete code:
+        The function magnetism_magnetic_forcesf cuts off abruptly at eqn == "twowires" near separation(r).
+    Unbound Variables: 
+        In projectilef() under trajectory calculation (eqn == "e"), the variable v is used in (2 * v ** 2 * math.cos(θ) ** 2) 
+        without ever being defined or requested from the user.
+    Domain Errors: 
+        Tracing inverse trigonometric functions like math.asin() or math.acos() 
+        without checking if the argument is within $[-1, 1]$ causes standard ValueError crashes.
