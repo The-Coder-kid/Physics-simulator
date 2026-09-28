@@ -54,6 +54,7 @@ def projectile():
             continue
     θ = math.radians(θ)
     projectilel = ["position equations(p)", "Velocity equations(v)", " Maximum height(mh)", " Time of flight(t)", "Range(r)", "Maximum range(mr)", "Equation of trajectory(e)"]
+    print("These are the various aspects under projectile:")
     for item in projectilel:
         print(f" - {item}")
     eqn = input("What are you working on?: ").lower()
