@@ -1,6 +1,13 @@
 import math
 pi = 3.142
 g = 9.81
+h_planck = 6.626e-34      # J·s
+c_light = 3.0e8           # m/s
+e_charge = 1.6e-19        # C
+epsilon0 = 8.85e-12       # F/m
+mu0 = 4 * math.pi * 1e-7  # T·m/A
+R_gas = 8.314             # J/(mol·K)
+I0_sound = 1e-12          # W/m^2
 def pendulumf():
     c = input("Are you  finding period, length or the frequency(p or l or f)?: ")
     if c == "p":
