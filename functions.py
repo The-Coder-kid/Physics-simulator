@@ -813,3 +813,127 @@ def capacitors_circuit():
         v = float(input("What is the voltage (V)?: "))
         u = 0.5 * c * v ** 2
         print(f"The stored energy is {u:.4f} J")
+
+def resistors_ohms_law():
+    resistors_ohms_lawl = [
+        "Ohm's Law(ohms)",
+        "Series resistance(series)",
+        "Parallel resistance(parallel)",
+        "Power(power)"
+    ]
+    for item in resistors_ohms_lawl:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
+
+    if eqn == "ohms":
+        find = input("Do you want to find voltage, current or resistance (v, i, r): ").lower()
+        if find == "v":
+            i = float(input("What is the current (A)?: "))
+            r = float(input("What is the resistance (Ω)?: "))
+            v = i * r
+            print(f"The voltage is {v:.2f} V")
+        elif find == "i":
+            v = float(input("What is the voltage (V)?: "))
+            r = float(input("What is the resistance (Ω)?: "))
+            i = v / r
+            print(f"The current is {i:.2f} A")
+        elif find == "r":
+            v = float(input("What is the voltage (V)?: "))
+            i = float(input("What is the current (A)?: "))
+            r = v / i
+            print(f"The resistance is {r:.2f} Ω")
+
+    elif eqn == "series":
+        n = int(input("How many resistors are in series?: "))
+        total = 0
+        for x in range(n):
+            r = float(input(f"Enter resistance {x + 1} (Ω): "))
+            total += r
+        print(f"The total series resistance is {total:.2f} Ω")
+
+    elif eqn == "parallel":
+        n = int(input("How many resistors are in parallel?: "))
+        reciprocal_total = 0
+        for x in range(n):
+            r = float(input(f"Enter resistance {x + 1} (Ω): "))
+            reciprocal_total += 1 / r
+        total = 1 / reciprocal_total
+        print(f"The total parallel resistance is {total:.2f} Ω")
+
+    elif eqn == "power":
+        known = input("Which values do you know (vi, ir, vr): ").lower()
+        if known == "vi":
+            v = float(input("What is the voltage (V)?: "))
+            i = float(input("What is the current (A)?: "))
+            p = v * i
+            print(f"The power is {p:.2f} W")
+        elif known == "ir":
+            i = float(input("What is the current (A)?: "))
+            r = float(input("What is the resistance (Ω)?: "))
+            p = i ** 2 * r
+            print(f"The power is {p:.2f} W")
+        elif known == "vr":
+            v = float(input("What is the voltage (V)?: "))
+            r = float(input("What is the resistance (Ω)?: "))
+            p = v ** 2 / r
+            print(f"The power is {p:.2f} W")
+
+
+def magnetism_magnetic_forces():
+    magnetism_magnetic_forcesl = [
+        "Force on a moving charge(chargeforce)",
+        "Force on a current-carrying wire(wireforce)",
+        "Field of a long straight wire(wirefield)",
+        "Field of a solenoid(solenoid)",
+        "Field at the center of a loop(loop)",
+        "Torque on a current loop(torque)"
+    ]
+    for item in magnetism_magnetic_forcesl:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
+
+    if eqn == "chargeforce":
+        q = float(input("What is the charge (C)?: "))
+        v = float(input("What is the velocity (m/s)?: "))
+        b = float(input("What is the magnetic field strength (T)?: "))
+        θ = float(input("What is the angle between v and B (degrees)?: "))
+        θ = math.radians(θ)
+        f = q * v * b * math.sin(θ)
+        print(f"The force on the charge is {f:.6e} N")
+
+    elif eqn == "wireforce":
+        b = float(input("What is the magnetic field strength (T)?: "))
+        i = float(input("What is the current (A)?: "))
+        l = float(input("What is the length of the wire (m)?: "))
+        θ = float(input("What is the angle between the wire and B (degrees)?: "))
+        θ = math.radians(θ)
+        f = b * i * l * math.sin(θ)
+        print(f"The force on the wire is {f:.4f} N")
+
+    elif eqn == "wirefield":
+        i = float(input("What is the current (A)?: "))
+        r = float(input("What is the distance from the wire (m)?: "))
+        b = (mu0 * i) / (2 * math.pi * r)
+        print(f"The magnetic field strength is {b:.6e} T")
+
+    elif eqn == "solenoid":
+        n = float(input("What is the number of turns per unit length (turns/m)?: "))
+        i = float(input("What is the current (A)?: "))
+        b = mu0 * n * i
+        print(f"The magnetic field strength is {b:.6e} T")
+
+    elif eqn == "loop":
+        i = float(input("What is the current (A)?: "))
+        r = float(input("What is the radius of the loop (m)?: "))
+        b = (mu0 * i) / (2 * r)
+        print(f"The magnetic field strength at the center is {b:.6e} T")
+
+    elif eqn == "torque":
+        n = float(input("What is the number of turns?: "))
+        i = float(input("What is the current (A)?: "))
+        a = float(input("What is the area of the loop (m^2)?: "))
+        b = float(input("What is the magnetic field strength (T)?: "))
+        θ = float(input("What is the angle between the loop's normal and B (degrees)?: "))
+        θ = math.radians(θ)
+        tau = n * i * a * b * math.sin(θ)
+        print(f"The torque is {tau:.6f} N·m")

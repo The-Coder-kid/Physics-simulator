@@ -59,7 +59,7 @@ while True:
         elif Choice == "thermodynamics":
             thermodynamics()
         elif Choice == "capacitors and electric circuits":
-            capacitors_circuits()
+            capacitors_circuit()
         elif Choice == "resistors and ohm's law":
             resistors_ohms_law()
         elif Choice == "magnetism and magnetic forces":
