@@ -16,7 +16,7 @@ while True:
     print("Welcome to the Physics practicals simulator")
     print("The following are the practicals available in this program: ")
     for item in Practicals:
-        print(f" - {Practicals}")
+        print(f" - {item}")
     print("Type 'quit' or 'q' to exit the program")
     Choice = input("What practical do you want to do?: ").lower()
     if Choice in escape:
