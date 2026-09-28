@@ -20,3 +20,28 @@
 3. Unit Conversion Engine
     * Implement standard unit conversion helpers to normalize inputs to SI units before running calculations.
     * Return results with explicit SI units and option to format in engineering/scientific notation.
+
+4. Dynamic Schema Data for UI Generation
+    * To avoid hardcoding UI form fields for dozens of physics formulas, 
+    define a configuration dictionary or JSON schema describing each formula:
+    "FORMULA_METADATA = {
+    "pendulum_period": {
+        "title": "Simple Pendulum Period",
+        "category": "SHM",
+        "inputs": [
+            {"name": "length", "label": "Rope Length", "unit": "m", "min": 0}
+        ],
+        "outputs": [
+            {"name": "period", "label": "Period", "unit": "s"}
+        ]
+    }
+}"
+
+5. Calculation History and Export Feature
+    * Add backend state management to log calculation steps and results:
+        $ History Log: Store input parameters, selected formula, timestamp, and 
+        calculated results in a lightweight list or database.
+        $ Export Capability: Add helper functions to export calculation histories 
+        or step-by-step solutions to JSON, CSV, or LaTeX.
+
+    
