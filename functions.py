@@ -766,3 +766,50 @@ def thermodynamics():
         t = float(input("What is the temperature (K)?: "))
         ds = q / t
         print(f"The change in entropy is {ds:.4f} J/K")
+
+def capacitors_circuit():
+    capacitors_circuitl = [
+        "Capacitance(c)",
+        "Charge(q)",
+        "Series capacitance(series)",
+        "Parallel capacitance(parallel)",
+        "Energy stored(energy)"
+    ]
+    for item in capacitors_circuitl:
+        print(f" - {item}")
+    eqn = input("What are you working with: ").lower()
+
+    if eqn in ["c", "capacitance"]:
+        q = float(input("What is the charge (C)?: "))
+        v = float(input("What is the voltage (V)?: "))
+        c = q / v
+        print(f"The capacitance is {c:.6e} F")
+
+    elif eqn in ["q", "charge"]:
+        c = float(input("What is the capacitance (F)?: "))
+        v = float(input("What is the voltage (V)?: "))
+        q = c * v
+        print(f"The charge is {q:.6e} C")
+
+    elif eqn == "series":
+        n = int(input("How many capacitors are in series?: "))
+        reciprocal_total = 0
+        for x in range(n):
+            cap = float(input(f"Enter capacitance {x + 1} (F): "))
+            reciprocal_total += 1 / cap
+        total = 1 / reciprocal_total
+        print(f"The total series capacitance is {total:.6e} F")
+
+    elif eqn == "parallel":
+        n = int(input("How many capacitors are in parallel?: "))
+        total = 0
+        for x in range(n):
+            cap = float(input(f"Enter capacitance {x + 1} (F): "))
+            total += cap
+        print(f"The total parallel capacitance is {total:.6e} F")
+
+    elif eqn == "energy":
+        c = float(input("What is the capacitance (F)?: "))
+        v = float(input("What is the voltage (V)?: "))
+        u = 0.5 * c * v ** 2
+        print(f"The stored energy is {u:.4f} J")
