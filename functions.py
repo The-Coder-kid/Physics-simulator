@@ -27,8 +27,32 @@ def pendulum(length, unit_l):
         print(f"The frequency of the pendulum is: {frequency:.2f} Hz")
 
 
-def projectile(v, θ, t):
+def projectile():
     θ = math.radians(θ)
+    while True:
+        try:
+            v = float(input("What is the initial velocity of the projectile in meters per second (m/s)? "))
+            break
+        except:
+                ValueError
+                print("Value must be a number")
+                continue
+    while True:
+        try:
+            θ = float(input("What is the angle of projection with respect to the horizontal in degrees? "))
+            break
+        except:
+            ValueError
+            print("Value must be a number")
+            continue
+    while True:
+        try:
+            t = float(input("How many seconds did the projectile take to complete its flight? "))
+            break
+        except:
+            ValueError
+            print("Value must be a number")
+            continue
     projectilel = ["position equations(p)", "Velocity equations(v)", " Maximum height(mh)", " Time of flight(t)", "Range(r)", "Maximum range(mr)", "Equation of trajectory(e)"]
     for item in projectilel:
         print(f"- {item}")
