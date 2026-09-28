@@ -44,4 +44,7 @@
         $ Export Capability: Add helper functions to export calculation histories 
         or step-by-step solutions to JSON, CSV, or LaTeX.
 
+5.  Core Refactoring: Decouple Logic from CLI I/O
+    * The current codebase tightly couples physics calculations with terminal input/output 
+    (input() and print()). A UI cannot easily consume functions that wait for standard input.
     
