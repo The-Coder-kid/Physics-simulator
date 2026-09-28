@@ -61,4 +61,10 @@
         $ Unified Registry or Dispatcher: 
         Map formula keys to functions and their expected 
         arguments so the UI can dynamically call formulas.
+
+7. Automated Unit Test Suite
+    * With dozens of mathematical branches, unit tests 
+    (pytest or unittest) are necessary to ensure future UI changes do not break calculations.
+        $ Write unit tests covering nominal physics inputs for every function.
+        $ Write edge-case tests verifying that division-by-zero and invalid domains are caught cleanly.
                 
