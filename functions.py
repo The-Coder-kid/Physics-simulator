@@ -29,8 +29,10 @@ def pendulum(length, unit_l):
 
 def projectile(v, θ, t):
     θ = math.radians(θ)
-
-    eqn = input("Are you working with position equations, velocity equations, maximum height, time of flight, range, maximum range or equation of tranjectory(p, v, mh, t, r, mr, e: )").lower()
+    projectilel = ["position equations(p)", "Velocity equations(v)", " Maximum height(mh)", " Time of flight(t)", "Range(r)", "Maximum range(mr)", "Equation of trajectory(e)"]
+    for item in projectilel:
+        print(f"- {item}")
+    eqn = input("What are you working on?: ").lower()
     if eqn == "p":
         position_eqn = input("Do you want to do horizontal or vertical postion (h or v): ")
 
