@@ -55,7 +55,7 @@ def projectile():
     θ = math.radians(θ)
     projectilel = ["position equations(p)", "Velocity equations(v)", " Maximum height(mh)", " Time of flight(t)", "Range(r)", "Maximum range(mr)", "Equation of trajectory(e)"]
     for item in projectilel:
-        print(f"- {item}")
+        print(f" - {item}")
     eqn = input("What are you working on?: ").lower()
     if eqn == "p":
         position_eqn = input("Do you want to do horizontal or vertical postion (h or v): ")
