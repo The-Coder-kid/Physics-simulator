@@ -22,13 +22,6 @@ while True:
     if Choice in escape:
         quit()
 
-
-    for index, practical in enumerate(Practicals):
-        if index == Total_practicals - 1:
-            print(practical, end=".")
-        else:
-            print(practical, end=", ")
-
     if Choice in Practicals:
         if Choice == "pendulum":            
             length = float(input("What is the length of the rope?: "))  # Use float for length
