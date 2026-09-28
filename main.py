@@ -42,31 +42,7 @@ while True:
                 pendulum(length, unit_l)
 
         elif Choice == "projectile":
-            while True:
-                try:
-                    v = float(input("What is the initial velocity of the projectile in meters per second (m/s)? "))
-                    break
-                except:
-                    ValueError
-                    print("Value must be a number")
-                    continue
-            while True:
-                try:
-                    θ = float(input("What is the angle of projection with respect to the horizontal in degrees? "))
-                    break
-                except:
-                    ValueError
-                    print("Value must be a number")
-                    continue
-            while True:
-                try:
-                    t = float(input("How many seconds did the projectile take to complete its flight? "))
-                    break
-                except:
-                    ValueError
-                    print("Value must be a number")
-                    continue
-            projectile(v, θ, t)
+            projectile()
         elif Choice == "circuit":
             circuit()
         elif Choice == "electromagnetic induction":
