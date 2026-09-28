@@ -44,10 +44,21 @@
         $ Export Capability: Add helper functions to export calculation histories 
         or step-by-step solutions to JSON, CSV, or LaTeX.
 
-5.  Core Refactoring: Decouple Logic from CLI I/O
+6.  Core Refactoring: Decouple Logic from CLI I/O
     * The current codebase tightly couples physics calculations with terminal input/output 
     (input() and print()). A UI cannot easily consume functions that wait for standard input.
         $ Separate calculation functions from I/O: Convert interactive loops into pure mathematical 
         functions that take arguments and return structured results (e.g., dataclass, dict, or tuple).
-        $
-    
+        "# Current design
+            def pendulumf():
+                length = float(input(...))
+                ...
+                print(...)
+
+            # Refactored design
+            def calculate_pendulum_period(length: float, g: float = 9.81) -> float:
+                return 2 * math.pi * math.sqrt(length / g)"
+        $ Unified Registry or Dispatcher: 
+        Map formula keys to functions and their expected 
+        arguments so the UI can dynamically call formulas.
+                
