@@ -18,6 +18,7 @@ while True:
             print(practical, end=", ")
 
     print("\nType 'quit' or 'q' to exit the program")
+    
 
     if Choice in escape:
         quit()
