@@ -2,7 +2,9 @@ import math
 from find import pendulumf, projectilef
 from functions import *
 escape = ["quit", "q"]
-Practicals = ["pendulum", "projectile", "circuit", "m", "find"]
+Practicals = ["pendulum", "projectile", "circuit", "electromagnetic induction", "wave motion", "Thermal properties of matter", 
+              "Simple harmonic motion", "Fluid Dynamics", "Optics", "Electric currents and magnetic fields", "Nuclear physics", 
+              "Quantum mechanics", "Thermodynamics", "Capacitors and electric circuits", "Resistors and Ohm's law", "Magnetism and magnetic forces", "m", "find"]
 Total_practicals = len(Practicals)
 pi = 3.142
 g = 9.81    
