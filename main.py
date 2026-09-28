@@ -10,6 +10,7 @@ g = 9.81
 while True:
     print("Welcome to the Physics practicals simulator")
     print("The following are the practicals available in this program:", end=" ")
+    Choice = input("What practical do you want to do?: ")
 
     for index, practical in enumerate(Practicals):
         if index == Total_practicals - 1:
@@ -18,8 +19,6 @@ while True:
             print(practical, end=", ")
 
     print("\nType 'quit' or 'q' to exit the program")
-    
-
     if Choice in escape:
         quit()
 
