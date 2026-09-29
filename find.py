@@ -194,6 +194,7 @@ def projectilef():
         elif eqn == "e":
             x = float(input("What is the horizontal position?: "))
             θ = float(input("What is the angle?: "))
+            v = float(input("What is the intial velocity?: "))
             t = float(input("What is the time taken?: "))
             θ = math.radians(θ)
             y = math.tan(θ) * x - (g * x ** 2) / (2 * v ** 2 * math.cos(θ) ** 2)
