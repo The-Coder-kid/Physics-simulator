@@ -8,7 +8,7 @@
         Tracing inverse trigonometric functions like math.asin() or math.acos() 
         without checking if the argument is within $[-1, 1]$ causes standard ValueError crashes.
 
-2. Robut Error Handling and Input Validation
+2. Robust Error Handling and Input Validation
     * Physical Boundary Checks: 
         Reject unphysical inputs (e.g., negative mass, negative resistance, speeds exceeding $c$, temperatures below $0\text{ K}$).
     * Zero Division Safeguards: 
