@@ -9,7 +9,10 @@ mu0 = 4 * math.pi * 1e-7  # T·m/A
 R_gas = 8.314             # J/(mol·K)
 I0_sound = 1e-12          # W/m^2
 def pendulumf():
-    c = input("Are you  finding period, length or the frequency(p or l or f)?: ")
+    print("Choose what you want to work on:")
+    for aspect in pendulumfl:
+        print(aspect)
+    c = input("What do you want to work on?: ").lower()
     if c == "p":
         length = float(input("What is the length of the rope?: "))
         sqrt = math.sqrt(length / 9.81)
@@ -28,9 +31,15 @@ def pendulumf():
         frequency = 1 / period
         print(f"The frequency is {frequency:.2f}")
 
+
+pendulumfl = ['period(p)', 'length(l)', 'frequency(f)']
+
 def projectilef():
     while True:
-        eqn = input("Are you working with position equations(p), velocity equations(v), maximum height(mh), time of flight(t), range(r), maximum range(mr) or equation of tranjectory(e)").lower()
+        print("Choose what you want to work on:")
+        for aspect in projectilefl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
 
@@ -200,9 +209,15 @@ def projectilef():
             y = math.tan(θ) * x - (g * x ** 2) / (2 * v ** 2 * math.cos(θ) ** 2)
             print(f"The vertical position is {y:.2f}")
                 
+
+projectilefl = ['position equations(p)', 'velocity equations(v)', 'maximum height(mh)', 'time of flight(t)', 'range(r)', 'maximum range(mr)', 'equation of tranjectory(e)']
+
 def circuitf():
     while True:
-        eqn = input("Are you working with Ohm's law(o), power(p), series resistance(s), parallel resistance(pa), EMF/internal resistance(e) or charge(q): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in circuitfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "quit":
             quit()
 
@@ -330,9 +345,15 @@ def circuitf():
                 i = float(input("What is the current (A)?: "))
                 t = q / i
                 print(f"The time is {t:.2f} s")
+
+circuitfl = ["Ohm's law(o)", 'power(p)', 'series resistance(s)', 'parallel resistance(pa)', 'EMF/internal resistance(e)', 'charge(q)']
+
 def electromagnetic_inductionf():
     while True:
-        eqn = input("Are you working with Faraday's law(emf), magnetic flux(flux), motional EMF(motional), self-inductance(self), inductor energy(energy), mutual inductance(mutual) or transformer(transformer) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in electromagnetic_inductionfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -471,9 +492,15 @@ def electromagnetic_inductionf():
                 print(f"The number of primary turns is {np_:.2f}")
  
  
+
+electromagnetic_inductionfl = ["Faraday's law(emf)", 'magnetic flux(flux)', 'motional EMF(motional)', 'self-inductance(self)', 'inductor energy(energy)', 'mutual inductance(mutual)', 'transformer(transformer)']
+
 def wave_motion_soundf():
     while True:
-        eqn = input("Are you working with wave speed(speed), period(period), speed of sound in air(sound), Doppler effect(doppler), intensity(intensity), sound level(level), beats(beats), string or open pipe(string) or closed pipe(closed) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in wave_motion_soundfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -601,9 +628,15 @@ def wave_motion_soundf():
                 print(f"The length is {l:.4f} m")
  
  
+
+wave_motion_soundfl = ['wave speed(speed)', 'period(period)', 'speed of sound in air(sound)', 'Doppler effect(doppler)', 'intensity(intensity)', 'sound level(level)', 'beats(beats)', 'string or open pipe(string)', 'closed pipe(closed)']
+
 def thermal_propertiesf():
     while True:
-        eqn = input("Are you working with heat energy(heat), latent heat(latent), thermal expansion(expansion), thermal conduction(conduction) or ideal gas law(gas) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in thermal_propertiesfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -723,9 +756,15 @@ def thermal_propertiesf():
                 print(f"The temperature is {t:.4f} K")
  
  
+
+thermal_propertiesfl = ['heat energy(heat)', 'latent heat(latent)', 'thermal expansion(expansion)', 'thermal conduction(conduction)', 'ideal gas law(gas)']
+
 def shmf():
     while True:
-        eqn = input("Are you working with displacement(x), velocity(v), velocity from displacement(vx), acceleration(a), angular frequency(omega), spring period(spring), pendulum period(pendulum), max velocity(vmax), max acceleration(amax) or energy(energy) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in shmfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -935,9 +974,15 @@ def shmf():
                     print(f"The displacement is {math.sqrt(2 * e / k):.4f} m")
  
  
+
+shmfl = ['displacement(x)', 'velocity(v)', 'velocity from displacement(vx)', 'acceleration(a)', 'angular frequency(omega)', 'spring period(spring)', 'pendulum period(pendulum)', 'max velocity(vmax)', 'max acceleration(amax)', 'energy(energy)']
+
 def fluid_dynamicsf():
     while True:
-        eqn = input("Are you working with density(density), pressure(pressure), pressure at depth(depth), Pascal's principle(pascal), Archimedes' principle(archimedes), continuity(continuity), Bernoulli(bernoulli), Poiseuille's law(poiseuille) or Reynolds number(reynolds) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in fluid_dynamicsfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -1146,9 +1191,15 @@ def fluid_dynamicsf():
                 print(f"The viscosity is {eta:.6f} Pa·s")
  
  
+
+fluid_dynamicsfl = ['density(density)', 'pressure(pressure)', 'pressure at depth(depth)', "Pascal's principle(pascal)", "Archimedes' principle(archimedes)", 'continuity(continuity)', 'Bernoulli(bernoulli)', "Poiseuille's law(poiseuille)", 'Reynolds number(reynolds)']
+
 def opticsf():
     while True:
-        eqn = input("Are you working with the lens/mirror equation(lens), magnification(mag), lens maker's equation(maker), Snell's law(snell), critical angle(critical), lens power(power) or combined lenses(combined) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in opticsfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -1278,9 +1329,15 @@ def opticsf():
                 print(f"The unknown lens power is {total - known:.4f} D")
  
  
+
+opticsfl = ['lens/mirror equation(lens)', 'magnification(mag)', "lens maker's equation(maker)", "Snell's law(snell)", 'critical angle(critical)', 'lens power(power)', 'combined lenses(combined)']
+
 def electric_currents_magnetic_fieldsf():
     while True:
-        eqn = input("Are you working with force on a moving charge(chargeforce), force on a wire(wireforce), field of a straight wire(wirefield), field of a solenoid(solenoid), field at a loop's center(loop) or torque on a loop(torque) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in electric_currents_magnetic_fieldsfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -1419,9 +1476,15 @@ def electric_currents_magnetic_fieldsf():
                 print(f"The angle is {math.degrees(θ):.2f} degrees")
  
  
+
+electric_currents_magnetic_fieldsfl = ['force on a moving charge(chargeforce)', 'force on a wire(wireforce)', 'field of a straight wire(wirefield)', 'field of a solenoid(solenoid)', "field at a loop's center(loop)", 'torque on a loop(torque)']
+
 def nuclear_physicsf():
     while True:
-        eqn = input("Are you working with radioactive decay(decay), decay using half-life(halfdecay), half-life(halflife), activity(activity), mass-energy(massenergy) or binding energy(binding) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in nuclear_physicsfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -1505,9 +1568,15 @@ def nuclear_physicsf():
                 print(f"The mass (defect) is {e / c_light ** 2:.4e} kg")
  
  
+
+nuclear_physicsfl = ['radioactive decay(decay)', 'decay using half-life(halfdecay)', 'half-life(halflife)', 'activity(activity)', 'mass-energy(massenergy)', 'binding energy(binding)']
+
 def quantum_mechanicsf():
     while True:
-        eqn = input("Are you working with photon energy(photon), the photoelectric effect(photoelectric), threshold frequency(threshold), stopping potential(stopping) or de Broglie wavelength(debroglie) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in quantum_mechanicsfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -1581,9 +1650,15 @@ def quantum_mechanicsf():
                 print(f"The velocity is {h_planck / (w * m):.4e} m/s")
  
  
+
+quantum_mechanicsfl = ['photon energy(photon)', 'the photoelectric effect(photoelectric)', 'threshold frequency(threshold)', 'stopping potential(stopping)', 'de Broglie wavelength(debroglie)']
+
 def thermodynamicsf():
     while True:
-        eqn = input("Are you working with the first law(first), work by a gas(work), efficiency(efficiency), Carnot efficiency(carnot), entropy(entropy) or internal energy of an ideal gas(internal) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in thermodynamicsfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -1678,9 +1753,15 @@ def thermodynamicsf():
                 print(f"The temperature is {u / (1.5 * n * R_gas):.4f} K")
  
  
+
+thermodynamicsfl = ['the first law(first)', 'work by a gas(work)', 'efficiency(efficiency)', 'Carnot efficiency(carnot)', 'entropy(entropy)', 'internal energy of an ideal gas(internal)']
+
 def capacitors_circuitsf():
     while True:
-        eqn = input("Are you working with capacitance(cap), energy stored(energy), series capacitors(series), parallel capacitors(parallel), parallel plate capacitor(plate), time constant(tau) or RC charging/discharging(rc) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in capacitors_circuitsfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -1804,9 +1885,15 @@ def capacitors_circuitsf():
                     print(f"The time is {t:.4f} s")
  
  
+
+capacitors_circuitsfl = ['capacitance(cap)', 'energy stored(energy)', 'series capacitors(series)', 'parallel capacitors(parallel)', 'parallel plate capacitor(plate)', 'time constant(tau)', 'RC charging/discharging(rc)']
+
 def resistors_ohms_lawf():
     while True:
-        eqn = input("Are you working with Ohm's law(ohms), series resistors(series), parallel resistors(parallel), power(power) or resistivity(resistivity) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in resistors_ohms_lawfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -1918,9 +2005,15 @@ def resistors_ohms_lawf():
                 print(f"The area is {a:.6e} m^2")
  
  
+
+resistors_ohms_lawfl = ["Ohm's law(ohms)", 'series resistors(series)', 'parallel resistors(parallel)', 'power(power)', 'resistivity(resistivity)']
+
 def magnetism_magnetic_forcesf():
     while True:
-        eqn = input("Are you working with force on a moving charge(chargeforce), force on a wire(wireforce), force between two wires(twowires), circular motion radius(radius), magnetic dipole moment(dipole) or velocity selector(selector) (q to quit): ").lower()
+        print("Choose what you want to work on:")
+        for aspect in magnetism_magnetic_forcesfl:
+            print(aspect)
+        eqn = input("What do you want to work on?: ").lower()
         if eqn == "q":
             quit()
  
@@ -2074,3 +2167,4 @@ def magnetism_magnetic_forcesf():
                 v = float(input("What is the velocity (m/s)?: "))
                 print(f"The magnetic field is {e / v:.6e} T")
  
+magnetism_magnetic_forcesfl = ['force on a moving charge(chargeforce)', 'force on a wire(wireforce)', 'force between two wires(twowires)', 'circular motion radius(radius)', 'magnetic dipole moment(dipole)', 'velocity selector(selector)']
